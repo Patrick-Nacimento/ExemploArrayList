@@ -45,7 +45,7 @@ public class Exemplo02 {
          String menorNome = "";
          for(int i = 65; i <= 90; i++){
              for(int j = 65; j <= 90; j++){
-                 menorNome += (char) i + "" (char) j + "\n";
+                 menorNome += (char) i + "" + (char) j + "\n";
              }
          }
           System.out.println(menorNome);
