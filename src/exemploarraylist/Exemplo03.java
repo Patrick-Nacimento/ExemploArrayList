@@ -6,6 +6,7 @@
 package exemploarraylist;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,9 +19,40 @@ public class Exemplo03 {
      */
     public static void main(String[] args) {
         ArrayList<Integer> numeros = new ArrayList<>();
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < 5; i++){
             numeros.add(Integer.parseInt(JOptionPane.showInputDialog("Digite um numero")));
         }
+        
+        for(int i = 0; i < numeros.size(); i++){
+            System.out.println("[" + i + "] => " + numeros.get(i));
+        }
+        
+        int soma = 0;
+        for(int i = 0; i < numeros.size(); i++){
+            soma += numeros.get(i);
+        }
+        double media = soma / numeros.size();
+        
+        
+        int menorNumero = Integer.MAX_VALUE;
+        for(int i = 0; i < numeros.size(); i++){
+            if(numeros.get(i) < menorNumero){
+                menorNumero = numeros.get(i);
+            }
+        }
+        
+        int maiorNumero = Integer.MIN_VALUE;
+        for(int i = 0; i < numeros.size(); i++){
+            if(numeros.get(i) > maiorNumero){
+                maiorNumero = numeros.get(i);
+                
+            }
+        }
+        JOptionPane.showMessageDialog(null, 
+                "A soma é: " + soma 
+                + "\nMédia: " + media 
+                + "\nMenor número: " + menorNumero
+                + "\nMaior número");
     }
     
 }
